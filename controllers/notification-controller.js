@@ -1,9 +1,4 @@
 const Notification = require('../models/notification');
-const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
-  apiKey: '16897bab',
-  apiSecret: '2drzfFjwplWRrVJX'
-})
 
 exports.createNotification = (props) => {
     console.log(props);
