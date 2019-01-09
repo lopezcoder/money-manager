@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const { environment: { name, port }, dbms: { host, dbname, dbport }} = require('./config/config');
+const notificationService = require('./services/notification-service');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use('/notifications', notificationService);
 
 process.env.MONGO_URL = `mongodb://${ host }:${ dbport }/${ dbname }`;
 mongoose.Promise = global.Promise;
