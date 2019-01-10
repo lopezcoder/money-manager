@@ -28,7 +28,7 @@ exports.getNotifications = () => {
 exports.deleteNotificationById = (id) => {
     return Notification.findByIdAndDelete(id).then((notification) => {
         if (!notification) {
-            throw new Error('This notifications does not exist');
+            throw new Error('This notification does not exist');
         }
         return notification
     }).catch((err) => err);
